@@ -1017,7 +1017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12de434f401e3fe408ff7577ddaae021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchVelocity: {x: 0, y: 0, z: 1500}
+  launchVelocity: {x: 0, y: 0, z: 600}
 --- !u!82 &2072767403
 AudioSource:
   m_ObjectHideFlags: 0
