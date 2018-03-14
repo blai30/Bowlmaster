@@ -616,6 +616,7 @@ GameObject:
   - component: {fileID: 1242117729}
   - component: {fileID: 1242117731}
   - component: {fileID: 1242117730}
+  - component: {fileID: 1242117732}
   m_Layer: 5
   m_Name: Touch Input
   m_TagString: Untagged
@@ -674,6 +675,53 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1242117728}
+--- !u!114 &1242117732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1242117728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1367896529}
+          m_MethodName: DragStart
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1367896529}
+          m_MethodName: DragEnd
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1001 &1367896528
 Prefab:
   m_ObjectHideFlags: 0
@@ -716,6 +764,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57ea1e505e922f241969f7591078ed25, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1367896529 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114124917808744678, guid: 57ea1e505e922f241969f7591078ed25,
+    type: 2}
+  m_PrefabInternal: {fileID: 1367896528}
+  m_Script: {fileID: 11500000, guid: 182466ee708a1864db3b16b4208e00b1, type: 3}
 --- !u!1 &1590819199
 GameObject:
   m_ObjectHideFlags: 0

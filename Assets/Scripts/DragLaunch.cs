@@ -2,14 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Ball))]
 public class DragLaunch : MonoBehaviour {
+
+    private Ball ball;
 	
 	void Start() {
-		
+		ball = GetComponent<Ball>();
 	}
-	
-	void Update() {
-		
-	}
+
+    public void DragStart() {
+
+    }
+
+    public void DragEnd() {
+        
+    }
 
 }
