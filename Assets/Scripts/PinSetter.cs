@@ -43,6 +43,7 @@ public class PinSetter : MonoBehaviour {
         GameObject thingLeft = collider.gameObject;
 
         if (thingLeft.GetComponent<Pin>()) {
+            print("Pin left");
             Destroy(thingLeft);
         }
     }
