@@ -7,6 +7,7 @@ public class PinSetter : MonoBehaviour {
 	
     public int lastStandingCount = -1;
     public Text standingDisplay;
+    public float distanceToRaise = 40f;
 
     private Ball ball;
     private float lastChangeTime;
@@ -23,6 +24,19 @@ public class PinSetter : MonoBehaviour {
             CheckStanding();
         }
 	}
+
+    public void RaisePins() {
+        // Raise standing pins only by distanceToRaise
+        Debug.Log("Raising pins");
+    }
+
+    public void LowerPins() {
+        Debug.Log("Lowering pins");
+    }
+
+    public void RenewPins() {
+        Debug.Log("Renewing pins");
+    }
 
     void CheckStanding() {
         // Update the lastStandingCount
