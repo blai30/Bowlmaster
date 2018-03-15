@@ -12,4 +12,16 @@ public class PinSetter : MonoBehaviour {
 		
 	}
 
+    int CountStanding() {
+        int standing = 0;
+
+        foreach (Pin pin in GameObject.FindObjectsOfType<Pin>()) {
+            if (pin.IsStanding()) {
+                standing++;
+            }
+        }
+
+        return standing;
+    }
+
 }
