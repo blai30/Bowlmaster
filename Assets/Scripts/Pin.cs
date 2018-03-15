@@ -15,7 +15,12 @@ public class Pin : MonoBehaviour {
 	}
 
     public bool IsStanding() {
-        print(name + " " + transform.rotation.eulerAngles);
+        Vector3 rotationInEuler = transform.rotation.eulerAngles;
+        
+        float tiltInX = rotationInEuler.x;
+        float tiltInZ = rotationInEuler.z;
+
+        print(tiltInX + ", " + tiltInZ);
         return true;
     }
 
