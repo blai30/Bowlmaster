@@ -36,7 +36,6 @@ public class PinSetter : MonoBehaviour {
         if (thingHit.GetComponent<Ball>()) {
             ballEnteredBox = true;
             standingDisplay.color = Color.red;
-            
         }
     }
 
