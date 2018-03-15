@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class PinSetter : MonoBehaviour {
 	
+    public int lastStandingCount = -1;
     public Text standingDisplay;
 
+    private float lastChangeTime;
     private bool ballEnteredBox = false;
 
 	void Start() {
@@ -15,7 +17,32 @@ public class PinSetter : MonoBehaviour {
 	
 	void Update() {
 		standingDisplay.text = CountStanding().ToString();
+
+        if (ballEnteredBox) {
+            CheckStanding();
+        }
 	}
+
+    void CheckStanding() {
+        // Update the lastStandingCount
+        // Call PinsHaveSettled() when they have
+        int currentStanding = CountStanding();
+
+        if (currentStanding != lastStandingCount) {
+            lastChangeTime = Time.time;
+            lastStandingCount = currentStanding;
+            return;
+        }
+
+        float settleTime = 3f; // How long to wait to consider pins settled
+        if ((Time.time - lastChangeTime) > settleTime) { // If last change > 3s ago
+            PinsHaveSettled();
+        }
+    }
+
+    void PinsHaveSettled() {
+        
+    }
 
     int CountStanding() {
         int standing = 0;
