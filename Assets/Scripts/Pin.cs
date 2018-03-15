@@ -7,7 +7,7 @@ public class Pin : MonoBehaviour {
     public float standingThreshold = 5f;
 	
 	void Start() {
-		print(name + " Standing: " + IsStanding());
+		
 	}
 	
 	void Update() {

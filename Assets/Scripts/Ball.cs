@@ -33,6 +33,7 @@ public class Ball : MonoBehaviour {
         transform.position = ballStartPos;
         rigidBody.velocity = Vector3.zero;
         rigidBody.angularVelocity = Vector3.zero;
+        rigidBody.useGravity = false;
     }
 
 }
