@@ -8,11 +8,12 @@ public class PinSetter : MonoBehaviour {
     public int lastStandingCount = -1;
     public Text standingDisplay;
 
+    private Ball ball;
     private float lastChangeTime;
     private bool ballEnteredBox = false;
 
 	void Start() {
-		
+		ball = GameObject.FindObjectOfType<Ball>();
 	}
 	
 	void Update() {
@@ -41,7 +42,9 @@ public class PinSetter : MonoBehaviour {
     }
 
     void PinsHaveSettled() {
-        
+        lastStandingCount = -1; // Indicates pins have settled and ball not back in box
+        ballEnteredBox = false;
+        standingDisplay.color = Color.green;
     }
 
     int CountStanding() {
