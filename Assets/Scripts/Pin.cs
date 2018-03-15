@@ -7,7 +7,7 @@ public class Pin : MonoBehaviour {
     public float standingThreshold = 5f;
 	
 	void Start() {
-		IsStanding();
+		print(name + " Standing: " + IsStanding());
 	}
 	
 	void Update() {
@@ -17,11 +17,10 @@ public class Pin : MonoBehaviour {
     public bool IsStanding() {
         Vector3 rotationInEuler = transform.rotation.eulerAngles;
         
-        float tiltInX = rotationInEuler.x;
-        float tiltInZ = rotationInEuler.z;
+        float tiltInX = Mathf.Abs(rotationInEuler.x);
+        float tiltInZ = Mathf.Abs(rotationInEuler.z);
 
-        print(tiltInX + ", " + tiltInZ);
-        return true;
+        return tiltInX < standingThreshold && tiltInZ < standingThreshold;
     }
 
 }
