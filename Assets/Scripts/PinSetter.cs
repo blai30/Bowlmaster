@@ -42,6 +42,7 @@ public class PinSetter : MonoBehaviour {
     }
 
     void PinsHaveSettled() {
+        ball.Reset();
         lastStandingCount = -1; // Indicates pins have settled and ball not back in box
         ballEnteredBox = false;
         standingDisplay.color = Color.green;
@@ -73,7 +74,6 @@ public class PinSetter : MonoBehaviour {
         GameObject thingLeft = collider.gameObject;
 
         if (thingLeft.GetComponent<Pin>()) {
-            print("Pin left");
             Destroy(thingLeft);
         }
     }
