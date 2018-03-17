@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 16905040}
   - component: {fileID: 16905039}
   - component: {fileID: 16905043}
+  - component: {fileID: 16905044}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -207,6 +208,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 2072767402}
+--- !u!45 &16905044
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 16905038}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 36ebb1f81aa054bd49704f3d17f62c4d, type: 2}
 --- !u!1 &140343716
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,7 +915,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 806255391}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 925e7e23019b82044ab7c759bbfcaf65, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1274,6 +1283,7 @@ MonoBehaviour:
   lastStandingCount: -1
   standingDisplay: {fileID: 518889353}
   distanceToRaise: 40
+  pinSet: {fileID: 1078941762387800, guid: 39b4461523abb744684b57e918b23385, type: 2}
 --- !u!65 &1143670728
 BoxCollider:
   m_ObjectHideFlags: 0
