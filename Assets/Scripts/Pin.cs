@@ -5,9 +5,12 @@ using UnityEngine;
 public class Pin : MonoBehaviour {
 
     public float standingThreshold = 5f;
+    public float distToRaise = 40f;
+
+    private Rigidbody rigidBody;
 	
 	void Start() {
-		
+		rigidBody = GetComponent<Rigidbody>();
 	}
 	
 	void Update() {
@@ -21,6 +24,18 @@ public class Pin : MonoBehaviour {
         float tiltInZ = Mathf.Abs(rotationInEuler.z);
 
         return tiltInX < standingThreshold && tiltInZ < standingThreshold;
+    }
+
+    public void RaiseIfStanding() {
+        if (IsStanding()) {
+            rigidBody.useGravity = false;
+            transform.Translate(new Vector3(0, distToRaise, 0), Space.World);
+        }
+    }
+
+    public void Lower() {
+        rigidBody.useGravity = true;
+        transform.Translate(new Vector3(0, -distToRaise, 0), Space.World);
     }
 
 }
