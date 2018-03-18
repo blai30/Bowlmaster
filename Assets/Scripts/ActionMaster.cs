@@ -7,7 +7,17 @@ public class ActionMaster {
     public enum Action {Tidy, Reset, EndTurn, EndGame}
 
     public Action Bowl(int pins) {
-        return Action.Tidy;
+        if (pins < 0 || pins > 10) {
+            throw new UnityException("Invalid pins");
+        }
+
+        if (pins == 10) {
+            return Action.EndTurn;
+        }
+
+        // Other behavior here
+
+        throw new UnityException("Not sure what action to return");
     }
 
 }
