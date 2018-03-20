@@ -19,9 +19,12 @@ public class ActionMaster {
             return Action.EndTurn;
         }
 
-        if (bowl % 2 != 0) {
+        if (bowl % 2 != 0) { // Mid frame (or last frame)
             bowl++;
             return Action.Tidy;
+        } else if (bowl % 2 == 0) { // End of frame
+            bowl++;
+            return Action.EndTurn;
         }
 
         throw new UnityException("Not sure what action to return");
