@@ -4,16 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PinSetter : MonoBehaviour {
-	
-    public int lastStandingCount = -1;
+    
     public Text standingDisplay;
     public GameObject pinSet;
-    public bool ballOutOfPlay = false;
 
-    private Ball ball;
-    private float lastChangeTime;
+    private bool ballOutOfPlay = false;
+    private int lastStandingCount = -1;
     private int lastSettledCount = 10;
-    private ActionMaster actionMaster = new ActionMaster();
+    private float lastChangeTime;
+    
+    private Ball ball;
     private Animator animator;
 
 	void Start() {
@@ -29,6 +29,10 @@ public class PinSetter : MonoBehaviour {
             standingDisplay.color = Color.red;
         }
 	}
+
+    public void SetBallOutOfPlay(bool input) {
+        ballOutOfPlay = input;
+    }
 
     public void RaisePins() {
         Debug.Log("Raising pins");
@@ -69,6 +73,7 @@ public class PinSetter : MonoBehaviour {
         int standing = CountStanding();
         int pinFall = lastSettledCount - standing;
         lastSettledCount = standing;
+        ActionMaster actionMaster = new ActionMaster();
 
         ActionMaster.Action action = actionMaster.Bowl(pinFall);
         Debug.Log("Pinfall: " + pinFall + " " + action);

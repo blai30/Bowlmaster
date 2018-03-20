@@ -12,7 +12,7 @@ public class LaneBox : MonoBehaviour {
 
     void OnTriggerExit(Collider collider) {
         if (collider.gameObject.name == "Ball") {
-            pinSetter.ballOutOfPlay = true;
+            pinSetter.SetBallOutOfPlay(true);
         }
     }
 
