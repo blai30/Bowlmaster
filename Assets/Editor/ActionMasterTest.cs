@@ -108,4 +108,16 @@ public class ActionMasterTest {
         Assert.AreEqual(endTurn, actionMaster.Bowl(1));
     }
 
+    [Test]
+    public void T11Dondi10thFrameTurkey() {
+        //             1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
+        int[] rolls = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+        foreach (int roll in rolls) {
+            actionMaster.Bowl(roll);
+        }
+        Assert.AreEqual(reset, actionMaster.Bowl(10));
+        Assert.AreEqual(reset, actionMaster.Bowl(10));
+        Assert.AreEqual(endGame, actionMaster.Bowl(10));
+    }
+
 }
