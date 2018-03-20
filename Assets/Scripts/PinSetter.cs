@@ -11,10 +11,14 @@ public class PinSetter : MonoBehaviour {
 
     private Ball ball;
     private float lastChangeTime;
+    private int lastSettledCount = 10;
     private bool ballEnteredBox = false;
+    private ActionMaster actionMaster = new ActionMaster();
+    private Animator animator;
 
 	void Start() {
 		ball = GameObject.FindObjectOfType<Ball>();
+        animator = GetComponent<Animator>();
 	}
 	
 	void Update() {
@@ -61,6 +65,16 @@ public class PinSetter : MonoBehaviour {
     }
 
     void PinsHaveSettled() {
+        int pinFall = lastSettledCount - CountStanding();
+        lastSettledCount = CountStanding();
+
+        ActionMaster.Action action = actionMaster.Bowl(pinFall);
+        Debug.Log(action);
+
+        if (action == ActionMaster.Action.Tidy) {
+            animator.SetTrigger("tidyTrigger");
+        }
+
         ball.Reset();
         lastStandingCount = -1; // Indicates pins have settled and ball not back in box
         ballEnteredBox = false;
