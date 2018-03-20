@@ -8,11 +8,11 @@ public class PinSetter : MonoBehaviour {
     public int lastStandingCount = -1;
     public Text standingDisplay;
     public GameObject pinSet;
+    public bool ballOutOfPlay = false;
 
     private Ball ball;
     private float lastChangeTime;
     private int lastSettledCount = 10;
-    private bool ballEnteredBox = false;
     private ActionMaster actionMaster = new ActionMaster();
     private Animator animator;
 
@@ -24,8 +24,9 @@ public class PinSetter : MonoBehaviour {
 	void Update() {
 		standingDisplay.text = CountStanding().ToString();
 
-        if (ballEnteredBox) {
+        if (ballOutOfPlay) {
             UpdateStandingCountAndSettle();
+            standingDisplay.color = Color.red;
         }
 	}
 
@@ -86,7 +87,7 @@ public class PinSetter : MonoBehaviour {
 
         ball.Reset();
         lastStandingCount = -1; // Indicates pins have settled and ball not back in box
-        ballEnteredBox = false;
+        ballOutOfPlay = false;
         standingDisplay.color = Color.green;
     }
 
@@ -100,16 +101,6 @@ public class PinSetter : MonoBehaviour {
         }
 
         return standing;
-    }
-
-    void OnTriggerEnter(Collider collider) {
-        GameObject thingHit = collider.gameObject;
-
-        // Ball enters play box
-        if (thingHit.GetComponent<Ball>()) {
-            ballEnteredBox = true;
-            standingDisplay.color = Color.red;
-        }
     }
 
 }
