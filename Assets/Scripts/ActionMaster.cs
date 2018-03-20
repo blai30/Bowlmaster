@@ -37,15 +37,15 @@ public class ActionMaster {
             }
         }
 
-        if (pins == 10) {
-            bowl += 2;
-            return Action.EndTurn;
-        }
-
-        if (bowl % 2 != 0) { // Mid frame (or last frame)
-            bowl++;
-            return Action.Tidy;
-        } else if (bowl % 2 == 0) { // End of frame
+        if (bowl % 2 != 0) { // First bowl of frame
+            if (pins == 10) {
+                bowl += 2;
+                return Action.EndTurn;
+            } else {
+                bowl++;
+                return Action.Tidy;
+            }
+        } else if (bowl % 2 == 0) { // Second bowl of frame
             bowl++;
             return Action.EndTurn;
         }
