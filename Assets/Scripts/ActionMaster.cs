@@ -26,7 +26,9 @@ public class ActionMaster {
             return Action.Reset;
         } else if (bowl == 20) {
             bowl++;
-            if (AllPinsAreKnockedDown()) {
+            if (bowls[19-1] == 10 && bowls[20-1] == 0) {
+                return Action.Tidy;
+            } else if ((bowls[19-1] + bowls[20-1]) % 10 == 0) {
                 return Action.Reset;
             } else if (Bowl21Awarded()) {
                 return Action.Tidy;
@@ -49,10 +51,6 @@ public class ActionMaster {
         }
 
         throw new UnityException("Not sure what action to return");
-    }
-
-    private bool AllPinsAreKnockedDown() {
-        return (bowls[19-1] + bowls[20-1]) % 10 == 0;
     }
 
     private bool Bowl21Awarded() {

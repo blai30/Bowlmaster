@@ -89,4 +89,14 @@ public class ActionMasterTest {
         Assert.AreEqual(tidy, actionMaster.Bowl(5));
     }
 
+    [Test]
+    public void T09BensBowl20Test() {
+        //             1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18  19
+        int[] rolls = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10};
+        foreach (int roll in rolls) {
+            actionMaster.Bowl(roll);
+        }
+        Assert.AreEqual(tidy, actionMaster.Bowl(0));
+    }
+
 }
