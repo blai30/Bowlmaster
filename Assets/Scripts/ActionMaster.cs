@@ -6,12 +6,19 @@ public class ActionMaster {
 
     public enum Action {Tidy, Reset, EndTurn, EndGame}
 
-    // private int[] bowls = new int[21];
+    private int[] bowls = new int[21];
     private int bowl = 1;
 
     public Action Bowl(int pins) {
         if (pins < 0 || pins > 10) {
             throw new UnityException("Invalid pins");
+        }
+
+        bowls[bowl-1] = pins;
+
+        if (bowl >= 19 && Bowl21Awarded()) {
+            bowl++;
+            return Action.Reset;
         }
 
         if (pins == 10) {
@@ -28,6 +35,11 @@ public class ActionMaster {
         }
 
         throw new UnityException("Not sure what action to return");
+    }
+
+    private bool Bowl21Awarded() {
+        // Remember that arrays start counting at 0
+        return bowls[19-1] + bowls[20-1] >= 10;
     }
 
 }
