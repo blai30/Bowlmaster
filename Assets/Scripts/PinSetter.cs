@@ -15,6 +15,7 @@ public class PinSetter : MonoBehaviour {
     
     private Ball ball;
     private Animator animator;
+    private ActionMaster actionMaster = new ActionMaster(); // Needed here since only one instance
 
 	void Start() {
 		ball = GameObject.FindObjectOfType<Ball>();
@@ -73,7 +74,6 @@ public class PinSetter : MonoBehaviour {
         int standing = CountStanding();
         int pinFall = lastSettledCount - standing;
         lastSettledCount = standing;
-        ActionMaster actionMaster = new ActionMaster();
 
         ActionMaster.Action action = actionMaster.Bowl(pinFall);
         Debug.Log("Pinfall: " + pinFall + " " + action);
