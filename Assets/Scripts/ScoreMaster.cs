@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreMaster : MonoBehaviour {
+public class ScoreMaster {
 
-	void Start() {
-		
-	}
-	
-	void Update() {
-		
-	}
+    public static List<int> ScoreFrames(List<int> rolls) {
+        List<int> frameList = new List<int>();
+
+        // Code here
+
+        return frameList;
+    }
 
 }
