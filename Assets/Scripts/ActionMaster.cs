@@ -20,6 +20,7 @@ public class ActionMaster {
             return Action.EndGame;
         }
 
+        // Handle last-frame special cases
         if (bowl >= 19 && Bowl21Awarded()) {
             bowl++;
             return Action.Reset;
