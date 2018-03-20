@@ -44,7 +44,7 @@ public class PinSetter : MonoBehaviour {
 
     public void RenewPins() {
         Debug.Log("Renewing pins");
-        Instantiate(pinSet, new Vector3(0, 40, 1829), Quaternion.identity);
+        Instantiate(pinSet, new Vector3(0, 0, 1829), Quaternion.identity);
     }
 
     void UpdateStandingCountAndSettle() {
