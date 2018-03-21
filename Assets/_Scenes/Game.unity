@@ -334,9 +334,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 158015597}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0822a03dd02141e4fa7e8bb12bfb346d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9eff55581de6ff046a61b1676c6766d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standingDisplay: {fileID: 518889353}
 --- !u!1 &261907892
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,7 +843,7 @@ GameObject:
   - component: {fileID: 518889354}
   - component: {fileID: 518889353}
   m_Layer: 5
-  m_Name: Pins Left
+  m_Name: Standing Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1278,7 +1279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36eb76aa6bb7ec946a3a41bc394d7e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standingDisplay: {fileID: 518889353}
   pinSet: {fileID: 1078941762387800, guid: 39b4461523abb744684b57e918b23385, type: 2}
 --- !u!65 &1143670728
 BoxCollider:
