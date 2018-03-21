@@ -11,9 +11,10 @@ public class PinCounter : MonoBehaviour {
     private int lastStandingCount = -1;
     private int lastSettledCount = 10;
     private float lastChangeTime;
+    private GameManager gameManager;
 
 	void Start() {
-		
+		gameManager = GameObject.FindObjectOfType<GameManager>();
 	}
 	
 	void Update() {
@@ -56,6 +57,8 @@ public class PinCounter : MonoBehaviour {
         int standing = CountStanding();
         int pinFall = lastSettledCount - standing;
         lastSettledCount = standing;
+
+        gameManager.Bowl(pinFall);
 
         lastStandingCount = -1; // Indicates pins have settled and ball not back in box
         ballOutOfPlay = false;
