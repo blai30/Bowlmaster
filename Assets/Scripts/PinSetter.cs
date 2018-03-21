@@ -9,7 +9,7 @@ public class PinSetter : MonoBehaviour {
     
     private Animator animator;
     private PinCounter pinCounter;
-    private ActionMaster actionMaster = new ActionMaster(); // Needed here since only one instance
+    // private ActionMaster actionMaster = new ActionMaster(); // Needed here since only one instance
 
 	void Start() {
         animator = GetComponent<Animator>();
