@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PinSetter : MonoBehaviour {
     
-    public Text standingDisplay;
     public GameObject pinSet;
 
     private bool ballOutOfPlay = false;
@@ -39,14 +38,12 @@ public class PinSetter : MonoBehaviour {
         Debug.Log("Raising pins");
         foreach (Pin pin in GameObject.FindObjectsOfType<Pin>()) {
             pin.RaiseIfStanding();
-            pin.transform.rotation = Quaternion.Euler(270f, 0f, 0f);
         }
     }
 
     public void LowerPins() {
         foreach (Pin pin in GameObject.FindObjectsOfType<Pin>()) {
             pin.Lower();
-            pin.transform.rotation = Quaternion.Euler(270f, 0f, 0f);
         }
     }
 
